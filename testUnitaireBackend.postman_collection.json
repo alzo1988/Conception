@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "1390883b-f11c-4844-855b-4e3019aa4822",
+		"name": "reunion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23230480"
+	},
+	"item": [
+		{
+			"name": "utilisateur",
+			"item": [
+				{
+					"name": "Ajouter un utilisateur",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{reunion}}/Users",
+							"host": [
+								"{{reunion}}"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un utilisateur",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reunion}}/Users/1",
+							"host": [
+								"{{reunion}}"
+							],
+							"path": [
+								"Users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mettre a jour un utilisateur",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"Diop\",\r\n    \"prenom\" : \"codou\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{reunion}}/Users/2",
+							"host": [
+								"{{reunion}}"
+							],
+							"path": [
+								"Users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste des utilisateur",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_name\": \"employe2\",\r\n    \"password\" : \"passe123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{reunion}}/Users/login",
+							"host": [
+								"{{reunion}}"
+							],
+							"path": [
+								"Users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Administrateur",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Disponibilite",
+			"item": [
+				{
+					"name": "Ajouter Disponibilite",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer une disponibilite",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{reunion}}/disponibilite/1",
+							"host": [
+								"{{reunion}}"
+							],
+							"path": [
+								"disponibilite",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mettre a jour une disponibilite",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"jour\" : \"mardi\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{reunion}}/disponibilites/7",
+							"host": [
+								"{{reunion}}"
+							],
+							"path": [
+								"disponibilites",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste des disponibilite",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "reunion",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
